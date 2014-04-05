@@ -3,6 +3,6 @@ class UsersController < Devise::SessionsController
     if params[:username]
       @user = User.where(username: params[:username]).first
     end
-    @twets = @user.twets.all
+    @twets = @user.twets.order(created_at: :desc)
   end
 end

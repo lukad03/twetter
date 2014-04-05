@@ -4,7 +4,7 @@ Twetter::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   devise_scope :user do
-    get ':username' => 'twets#index', as: 'user_profile'
+    get ':username' => 'users#profile', as: 'user_profile'
   end
 
   authenticated :user do

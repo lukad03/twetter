@@ -13,10 +13,10 @@
       <% @twets.each do |twet| -%>
       <li>
         <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
-        <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
+        <small class="text-muted pad-10 text-middle"><%= link_to "@#{twet.user.username}", user_profile_path(twet.user.username) %></small>
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
-        <%= content_tag :p, twet.content %>
+        <%= content_tag :p, auto_link(twet.content) %>
       </li>
       <li><hr></li>
       <% end -%>

@@ -1,10 +1,13 @@
+<% if user_signed_in? %>
 <div class="col-md-4">
   <ul class="nav nav-pills nav-stacked well text-left">
     <li>
       <%= content_tag :strong, current_user.name %>
     </li>
     <li>
-      <%= content_tag :small, '@'+current_user.username %>
+      <small>
+       <%= link_to "@#{current_user.username}", user_profile_path(current_user.username) %>
+      </small>
     </li>
     <li>
       <table class="table table-bordered stats">
@@ -43,6 +46,15 @@
 
   <ul class="nav nav-pills nav-stacked well">
     <%= nav_item("Follow", follows_path) %>
-    <%= nav_item("Twet", twets_path) %>
   </ul>
 </div>
+
+<% else %>
+
+<div class="col-md-4">
+  <ul class="nav nav-pills nav-stacked well text-left">
+    <li>Like what you see? <%= link_to "Sign up today", "/" %></li>
+  </ul>
+</div>
+
+<% end %>

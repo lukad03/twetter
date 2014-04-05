@@ -22,7 +22,7 @@ class Twet < ActiveRecord::Base
       if User.where(:username => username).blank?
         "@#{username}"
       else
-        link_to "@#{username}", user_profile_path(username)
+        %q{<a href="/#{username}">@#{username}</a>}
       end
     end
   end
