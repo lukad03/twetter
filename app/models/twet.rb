@@ -22,7 +22,7 @@ class Twet < ActiveRecord::Base
       if User.where(:username => username).blank?
         "@#{username}"
       else
-        %q{<a href="/#{username}">@#{username}</a>}
+        "<a href='/#{username}'>@#{username}</a>"
       end
     end
   end

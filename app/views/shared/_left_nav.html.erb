@@ -43,10 +43,11 @@
       </div>
     <% end %>
   </ul>
-
+<% if @user != current_user %>
   <ul class="nav nav-pills nav-stacked well">
     <%= nav_item("Follow", follows_path) %>
   </ul>
+<% end %>
 </div>
 
 <% else %>

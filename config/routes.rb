@@ -5,11 +5,12 @@ Twetter::Application.routes.draw do
 
   devise_scope :user do
     get ':username' => 'users#profile', as: 'user_profile'
+    get ':username/follows' => 'users#following', as: 'user_follows'
   end
 
   authenticated :user do
     resources :follows, :except => [:new, :edit, :show, :update]
-    resources :twets, :except => [:new, :edit, :show, :update]
+    resources :twets, :except => [:index, :new, :edit, :show, :update]
     root :to => 'follows#index', :as => :user_root
   end
 
