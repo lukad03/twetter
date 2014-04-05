@@ -3,6 +3,10 @@ Twetter::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  devise_scope :user do
+    get ':username' => 'twets#index', as: 'user_profile'
+  end
+
   authenticated :user do
     resources :follows, :except => [:new, :edit, :show, :update]
     resources :twets, :except => [:new, :edit, :show, :update]
