@@ -19,11 +19,15 @@
             </td>
             <td>
               <%= content_tag :h4, current_user.follows.count %>
-              <%= content_tag :small, 'Following', :class => "uppercase lighter" %>
+              <small class="uppercase lighter">
+                <%= link_to "Following", user_following_path(current_user.username) %>
+              </small>
             </td>
             <td>
               <%= content_tag :h4, Follow.where(:following_id => current_user.id).count %>
-              <%= content_tag :small, 'Followers', :class => "uppercase lighter" %>
+              <small class="uppercase lighter">
+                <%= link_to "Following", user_followers_path(current_user.username) %>
+              </small>
             </td>
         </tbody>
       </table>

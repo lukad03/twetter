@@ -5,7 +5,8 @@ Twetter::Application.routes.draw do
 
   devise_scope :user do
     get ':username' => 'users#profile', as: 'user_profile'
-    get ':username/follows' => 'users#following', as: 'user_follows'
+    get ':username/following' => 'users#following', as: 'user_following'
+    get ':username/followers' => 'users#followers', as: 'user_followers'
   end
 
   authenticated :user do

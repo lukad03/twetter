@@ -25,7 +25,7 @@ class FollowsController < ApplicationController
     else
       flash[:error] = "Your attempt to follow was unsuccessful"
     end
-    redirect_to :action => :index
+    redirect_to user_profile_path(following.following.username)
   end
 
   # DELETE /follows/:id
