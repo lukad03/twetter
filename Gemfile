@@ -6,9 +6,6 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
@@ -47,6 +44,7 @@ gem 'rails_autolink'
 group :development do
   # Use RSpec for testing: https://github.com/rspec/rspec-rails
   gem 'rspec-rails', '~> 2.0'
+  gem 'sqlite3'
   # Use Factory Girl for Active Record sample instance object creation: https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
   gem 'factory_girl_rails'
   # Use FFaker for random seed generation: https://github.com/EmmanuelOga/ffaker
@@ -55,4 +53,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
