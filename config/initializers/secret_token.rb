@@ -1,1 +1,1 @@
-Twetter::Application.config.secret_token = ENV['SECRET_TOKEN']
+Twetter::Application.config.secret_token = ENV['b575c659069834f79c3ef909eac5c5be53c5467bccbcf0ed227ef71c169de8b693847164725f4d8928d88abe10527fc2c6c73f4a2881db459d3eaa0d3692612b']
