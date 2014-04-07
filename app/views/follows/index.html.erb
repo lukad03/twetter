@@ -1,7 +1,7 @@
 <div class="clearfix top-space small"></div>
 <div class="row">
 
-  <%= render :partial => 'shared/left_nav' %>
+  <%= render :partial => 'shared/home_nav' %>
 
   <div class="panel panel-default col-md-8 text-left">
     <div class="pull-left">
@@ -11,9 +11,11 @@
     <div class="clearfix"></div>
     <hr />
     <ol class="list-unstyled">
-      <% @users.each do |user| -%>
+      <% @users.each do |user| %>
       <li>
-        <%= content_tag :strong, user.name, :class => 'pull-left text-middle' %>
+        <strong class="pull-left text-middle">
+        <%= link_to user.name, user_profile_path(user.username) %>
+        </strong>
         <span class="text-muted pad-10 text-middle">
         </span>
         <%= follow_link(user) %>

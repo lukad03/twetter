@@ -15,8 +15,6 @@ class UsersController < Devise::SessionsController
       f.user_id
     end
     @users = User.where(id: @follows)
-
-
     #Go through each follow record with get_user's follow_id in it and return user_ids
   end
 

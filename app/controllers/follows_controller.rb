@@ -42,7 +42,7 @@ class FollowsController < ApplicationController
     else
       flash[:error] = "Your attempt to unfollow was not successful"
     end
-    redirect_to :action => :index
+    redirect_to user_profile_path(current_user.username)
   end
 
   private
