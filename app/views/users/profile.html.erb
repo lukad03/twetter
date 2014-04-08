@@ -17,6 +17,14 @@
         <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>
         <div class="clearfix"></div>
         <%= content_tag :p, auto_link(twet.content) %>
+        <%= form_for :retwet, :url => retwets_path,
+                         :method => :POST,
+                         :role => :form do |f| %>
+           <%= hidden_field_tag :return_to, request.original_url %>
+           <%= f.hidden_field :twet_id, :value => twet.id.to_s %>
+
+            <%= f.submit "Retwet", :class => "btn btn-primary pull-right" %>
+        <% end %>
       </li>
       <li><hr></li>
       <% end -%>

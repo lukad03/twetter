@@ -41,7 +41,7 @@ class TwetsController < ApplicationController
 
   # Sets the @twets instance variable to all twets viewable by the current user
   def get_twets
-    @twets = Twet.order(created_at: :desc)
+    @twets = current_user.all_twets
   end
 
   # http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
