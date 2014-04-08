@@ -1,5 +1,6 @@
 class Twet < ActiveRecord::Base
   belongs_to :user
+  has_many :retwets
   before_save :mention
 
   validates :content, :presence => true, :length => { :minimum => 2, :maximum => 140 }
