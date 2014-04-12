@@ -11,9 +11,7 @@ class UsersController < Devise::SessionsController
   end
 
   def following
-    @users = get_user.follows.map do |f|
-      f.following
-    end
+    get_follows
   end
 
   def followers
@@ -39,6 +37,12 @@ class UsersController < Devise::SessionsController
 
   def get_twet
     @twet = Twet.where(id: params[:username])
+  end
+
+  def get_follows
+    @users = get_user.follows.map do |f|
+      f.following
+    end
   end
 
 end

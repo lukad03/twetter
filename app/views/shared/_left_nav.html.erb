@@ -47,7 +47,7 @@
       </div>
     <% end %>
   </ul>
-<% if @user != current_user %>
+<% if can_follow(@user) %>
   <ul class="nav nav-pills nav-stacked well">
     <li>
         <%= form_for(:follow, :url => follows_path, :method => 'POST') do |f|
